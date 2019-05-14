@@ -1,0 +1,40 @@
+﻿<div id="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0; margin-top: 10px">
+        <li>
+            <a data-toggle="collapse" href="#collapse-usuario">
+                <i class="fa fa-folder-o fa-menu" aria-hidden="true"></i> Usuário
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
+
+            <div id="collapse-usuario" class="panel-collapse collapse">
+                <a href="@Url.Action("Index", "Usuario")">
+                    <i class="fa fa-group fa-menu" aria-hidden="true"></i>
+                    <span style="margin-left:10px;"> Lista Usuários</span>
+                </a>
+                <a href="@Url.Action("Index", "TipoUsuario")">
+                    <i class="fa fa-address-book fa-menu" aria-hidden="true"></i>
+                    <span style="margin-left:10px;"> Tipos Usuários</span>
+                </a>
+            </div>
+        </li>
+      
+        <li>
+            <a data-toggle="collapse" href="#collapse-produto">
+                <i class="fa fa-folder-o fa-menu" aria-hidden="true"></i> Produto
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
+
+            <div id="collapse-produto" class="panel-collapse collapse">
+                <a href="@Url.Action("Index", "Produto")">
+                    <i class="fa fa-shopping-cart fa-menu" aria-hidden="true"></i>
+                    <span style="margin-left:10px;"> Lista Produtos</span>
+                </a>
+
+                <a href="@Url.Action("Index", "CategoriaProduto")">
+                    <i class="fa fa-tag fa-menu" aria-hidden="true"></i>
+                    <span style="margin-left:10px;"> Categorias</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>

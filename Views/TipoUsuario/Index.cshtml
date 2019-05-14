@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Tipos de Usuários";
+}
+
+<div ng-controller="TipoUsuarioController">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>{{title}}</h3>
+        </div>
+        <div class="col-sm-6 text-right">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalTipoUsuario" ng-click="modalTipoUsuario()"><i class="fa fa-plus"></i> Novo Tipo</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-8">
+            <input type="text" class="form-control" ng-model="criterioBusca" placeholder="Pesquisar">
+        </div>
+    </div>
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th><a href="" ng-click="ordenarPor('Nome')">Nome</a></th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="tipo in listaTipoUsuario | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | filter:criterioBusca">
+                <td>{{tipo.Nome}}</td>
+                <td>
+                    <a href='#' class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalExcluir" ng-click="excluir(tipo)"><i class="fa fa-trash-o"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    @* Modal Adicionar Tipo Usuário *@
+    <div id="modalTipoUsuario" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-usuario">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{tituloModal}}</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        @Html.AntiForgeryToken()
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="nome">Nome: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" ng-model="novo.Nome" name="Nome">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-right">
+                                    <br />
+                                    <button type="submit" class="btn btn-primary" ng-click="novoTipoUsuario(novo)">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Modal Excluir Usuário *@
+    <div class="modal fade" id="modalExcluir" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content modal-usuario">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Excluir Usuário</h4>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-exclamation-triangle fa-3x text-danger"></i>
+                    <p>Deseja excluir o usuário {{nomeTipoUsuario}}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="excluirTipoUsuario(dadosTipoUsuario)">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
