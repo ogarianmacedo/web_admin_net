@@ -62,7 +62,6 @@ C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\bin\System.ValueTuple.dll
 C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\bin\System.Threading.Tasks.Extensions.xml
 C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\bin\System.ValueTuple.xml
-C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\bin\MySql.Data.dll
 C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\obj\Debug\WebAdmin.csproj.GenerateResource.Cache
 C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\obj\Debug\WebAdmin.Migrations.TabelasIniciais.resources
 C:\xampp\htdocs\CSHARP\WebAdmin\WebAdmin\obj\Debug\WebAdmin.Migrations.AddCol.resources
